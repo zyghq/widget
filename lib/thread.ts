@@ -64,8 +64,8 @@ export const threadResponseItemSchema = z.object({
     })
     .nullable()
     .default(null),
-  inboundFirstSeqId: z.string(),
-  inboundLastSeqId: z.string(),
+  inboundFirstSeqId: z.string().nullable().default(null),
+  inboundLastSeqId: z.string().nullable().default(null),
   inboundCustomer: z
     .object({
       customerId: z.string(),
@@ -73,8 +73,8 @@ export const threadResponseItemSchema = z.object({
     })
     .nullable()
     .default(null),
-  outboundFirstSeqId: z.string(),
-  outboundLastSeqId: z.string(),
+  outboundFirstSeqId: z.string().nullable().default(null),
+  outboundLastSeqId: z.string().nullable().default(null),
   outboundMember: z
     .object({
       memberId: z.string(),
