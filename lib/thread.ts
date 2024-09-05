@@ -57,6 +57,13 @@ export const threadResponseItemSchema = z.object({
   spam: z.boolean(),
   channel: z.string(),
   previewText: z.string(),
+  assignee: z
+    .object({
+      memberId: z.string(),
+      name: z.string(),
+    })
+    .nullable()
+    .default(null),
   inboundFirstSeqId: z.string(),
   inboundLastSeqId: z.string(),
   inboundCustomer: z
@@ -66,9 +73,9 @@ export const threadResponseItemSchema = z.object({
     })
     .nullable()
     .default(null),
-  egressFirstSeq: z.number().nullable().default(null),
-  egressLastSeq: z.number().nullable().default(null),
-  egressMember: z
+  outboundFirstSeqId: z.string(),
+  outboundLastSeqId: z.string(),
+  outboundMember: z
     .object({
       memberId: z.string(),
       name: z.string(),

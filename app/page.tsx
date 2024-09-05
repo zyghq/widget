@@ -15,33 +15,6 @@ import { threadResponseItemSchema, ThreadResponseItem } from "@/lib/thread";
 import { HomeLink } from "@/lib/widget";
 import { z } from "zod";
 
-// interface HomeFeed {
-//   id: string;
-//   title: string;
-//   previewText?: string;
-//   href: string;
-// }
-
-// const homeFeeds = [
-//   {
-//     id: "1",
-//     title: "What is Zyg?",
-//     previewText: "Check how Zyg can help you",
-//     href: "https://www.zyg.ai/",
-//   },
-//   {
-//     id: "3",
-//     title: "Read the Docs",
-//     href: "https://www.zyg.ai/",
-//   },
-//   {
-//     id: "4",
-//     title: "Book a Demo",
-//     previewText: "Get a 10 min demo of Zyg",
-//     href: "https://www.zyg.ai/",
-//   },
-// ];
-
 export default function Home() {
   const { isLoading, hasError, customer, widgetLayout } = useCustomer();
   const { homeLinks = [] } = widgetLayout;

@@ -5,10 +5,10 @@ import { ThreadResponseItem } from "@/lib/thread";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function ThreadItem({ thread }: { thread: ThreadResponseItem }) {
-  const { customer, egressMember } = thread;
+  const { customer, outboundMember } = thread;
 
-  const memberName = egressMember?.name || null;
-  const memberId = egressMember?.memberId || null;
+  const memberName = outboundMember?.name || null;
+  const memberId = outboundMember?.memberId || null;
   const hasMember = memberId && memberName;
   const customerId = customer.customerId;
 
