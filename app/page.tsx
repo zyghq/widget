@@ -11,7 +11,7 @@ import { Icons } from "@/components/icons";
 import Threads from "@/components/threads";
 import { useCustomer } from "@/lib/customer";
 import { useQuery } from "@tanstack/react-query";
-import { threadResponseItemSchema, ThreadResponseItem } from "@/lib/thread";
+import { threadResponseSchema, ThreadResponseItem } from "@/lib/thread";
 import { HomeLink } from "@/lib/widget";
 import { z } from "zod";
 
@@ -49,7 +49,7 @@ export default function Home() {
       const data = await response.json();
       try {
         const threads = data.map((item: any) => {
-          return threadResponseItemSchema.parse(item);
+          return threadResponseSchema.parse(item);
         });
         return threads;
       } catch (err) {

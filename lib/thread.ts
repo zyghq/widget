@@ -4,23 +4,20 @@ export const createThreadResponseSchema = z.object({
   threadId: z.string(),
   customer: z.object({
     customerId: z.string(),
-    name: z.string(),
+    name: z.string(), // TODO: add support for avatarUrl
   }),
   title: z.string().optional(),
   description: z.string().optional(),
-  sequence: z.number(),
   status: z.string(),
-  read: z.boolean(),
   replied: z.boolean(),
   priority: z.string(),
-  spam: z.boolean(),
   channel: z.string(),
   previewText: z.string(),
   inboundFirstSeqId: z.string(),
   inboundLastSeqId: z.string(),
   inboundCustomer: z.object({
     customerId: z.string(),
-    name: z.string(),
+    name: z.string(), // TODO: add support for avatarUrl
   }),
   createdAt: z.string(),
   updatedAt: z.string(),
@@ -41,26 +38,23 @@ export const createThreadResponseSchema = z.object({
 
 export type CreateThreadResponse = z.infer<typeof createThreadResponseSchema>;
 
-export const threadResponseItemSchema = z.object({
+export const threadResponseSchema = z.object({
   threadId: z.string(),
   customer: z.object({
     customerId: z.string(),
-    name: z.string(),
+    name: z.string(), // TODO: add support for avatarUrl
   }),
-  title: z.string().optional(),
-  description: z.string().optional(),
-  sequence: z.number(),
+  title: z.string(),
+  description: z.string(),
   status: z.string(),
-  read: z.boolean(),
   replied: z.boolean(),
   priority: z.string(),
-  spam: z.boolean(),
   channel: z.string(),
   previewText: z.string(),
   assignee: z
     .object({
       memberId: z.string(),
-      name: z.string(),
+      name: z.string(), // TODO: add support for avatarUrl
     })
     .nullable()
     .default(null),
@@ -86,7 +80,7 @@ export const threadResponseItemSchema = z.object({
   updatedAt: z.string(),
 });
 
-export type ThreadResponseItem = z.infer<typeof threadResponseItemSchema>;
+export type ThreadResponseItem = z.infer<typeof threadResponseSchema>;
 
 export const threadChatResponseSchema = z.object({
   threadId: z.string(),
