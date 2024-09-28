@@ -1,3 +1,7 @@
+## ⚠️ Deprecated
+
+This project is **deprecated** and no longer maintained. Please use [zyg-js](https://github.com/zyghq/zyg-js) for the updated version or alternative.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
